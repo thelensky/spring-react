@@ -1,12 +1,13 @@
-package com.thelensky.springreact;
+package com.thelensky.springreact.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomePage {
-  @RequestMapping("/")
-  String index() {
+public class HomeController {
+  @RequestMapping(value = "/")
+  public String index(){
     return "index";
   }
 }
+
