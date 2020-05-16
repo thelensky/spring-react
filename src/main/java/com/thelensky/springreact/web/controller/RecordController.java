@@ -1,6 +1,6 @@
-package com.thelensky.springreact.controller;
+package com.thelensky.springreact.web.controller;
 
-import com.thelensky.springreact.persistence.doa.RecordsRepository;
+import com.thelensky.springreact.persistence.dao.RecordsRepository;
 import com.thelensky.springreact.persistence.model.Record;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;

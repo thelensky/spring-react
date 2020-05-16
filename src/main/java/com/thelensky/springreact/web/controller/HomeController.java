@@ -1,4 +1,4 @@
-package com.thelensky.springreact.controller;
+package com.thelensky.springreact.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

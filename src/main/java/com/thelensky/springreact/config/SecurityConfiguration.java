@@ -55,7 +55,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
       AuthenticationManagerBuilder auth) throws Exception {
     auth.userDetailsService(userDetailsService)
         .passwordEncoder(passwordEncoder());
-
   }
 
   @Override
@@ -67,7 +66,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                      "/delete")
         .hasAnyAuthority("ADMIN")
         .antMatchers("/",
-
+                     "/user/registration",
                      "/build/bundle.js",
                      "/login_check",
                      "/logout",
@@ -81,6 +80,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         .logout()
         .logoutUrl("/logout")
         .deleteCookies("JSESSIONID")
+// h2 support
         .and()
         .headers()
         .frameOptions()

@@ -1,7 +1,7 @@
 package com.thelensky.springreact.service;
 
-import com.thelensky.springreact.persistence.doa.RoleRepository;
-import com.thelensky.springreact.persistence.doa.UsersRepository;
+import com.thelensky.springreact.persistence.dao.RoleRepository;
+import com.thelensky.springreact.persistence.dao.UsersRepository;
 import com.thelensky.springreact.persistence.model.Users;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

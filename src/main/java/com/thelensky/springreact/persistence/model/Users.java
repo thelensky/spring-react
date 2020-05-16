@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Entity
 @Data
 @Table(name = "users",
-       uniqueConstraints = {@UniqueConstraint(columnNames = {"name"})})
+       uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
 public class Users {
   public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
 
@@ -22,10 +22,12 @@ public class Users {
   @Column(name = "name")
   private String name;
 
-  @Column(name = "password")
+  @Column(name = "password", length = 60)
   @JsonIgnore
   private String password;
 
+  @Column(unique = true, nullable = false)
+  private String email;
 
   public Users() {
   }

@@ -1,4 +1,4 @@
-package com.thelensky.springreact.persistence.doa;
+package com.thelensky.springreact.persistence.dao;
 
 import com.thelensky.springreact.persistence.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,4 +15,5 @@ public interface RoleRepository extends JpaRepository<Role, Long> {
   List<String> findRolesByUserId(@Param
                               ("userId") Long userId);
 
+  Role findByRoleName(String roleName);
 }

@@ -1,4 +1,4 @@
-package com.thelensky.springreact.persistence.doa;
+package com.thelensky.springreact.persistence.dao;
 
 import com.thelensky.springreact.persistence.model.Record;
 import org.springframework.data.jpa.repository.JpaRepository;
