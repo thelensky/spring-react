@@ -7,5 +7,5 @@ public interface UsersRepository extends JpaRepository<Users, Long> {
 
   Users findByName(String name);
 
-  String findByEmail(String email);
+  Users findByEmail(String email);
 }

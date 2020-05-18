@@ -19,6 +19,9 @@ public class Users {
   @Column(name = "users_id")
   private Long id;
 
+  @Column(name = "enabled")
+  private boolean enabled;
+
   @Column(name = "name")
   private String name;
 

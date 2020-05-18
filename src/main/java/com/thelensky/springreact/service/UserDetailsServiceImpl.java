@@ -27,16 +27,17 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
   @Override
   public UserDetails loadUserByUsername(
-      String username) throws UsernameNotFoundException {
-    Users user = usersRepository.findByName(username);
+      String email) throws UsernameNotFoundException {
+
+    Users user = usersRepository.findByEmail(email);
     if (user == null) {
-      System.out.println("User not found! " + username);
+      System.out.println("User with " + email + " not found!");
       throw new UsernameNotFoundException(
-          "User " + username + " was not found in" + " the " +
-          "database");
+          "User whit email: " + user.getEmail() + " was not found in" + " the" +
+          " " + "database");
     }
 
-    System.out.println("User" + user + " was found!");
+    System.out.println("User whith email: " + user.getEmail() + " was found!");
     List<String> rolesName = roleRepository.findRolesByUserId(user.getId());
 
     List<GrantedAuthority> authorityList = new ArrayList<>();
@@ -46,8 +47,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
       }
     }
 
-    return new User(user.getName(),
+    return new User(user.getEmail(),
                     user.getPassword(),
+                    user.isEnabled(),
+                    true,
+                    true,
+                    true,
                     authorityList);
   }
 }
